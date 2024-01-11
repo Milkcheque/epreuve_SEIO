@@ -1,41 +1,31 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>ABC Consulting</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+{% endblock %}
 
-    <body>
-        <nav>
-            <a href="/">
-                <img src="{{ url_for('static', filename='images/Logo_transparent.png') }}" alt="">
-            </a>
-            <a href="">
-                <div>Nos formations</div>
-            </a>
-            <a href="">
-                <div>L'équipe</div>
-            </a>
-            <a href="">
-                <div>Se connecter</div>
-            </a>
-        </nav>
+{% block nav %}
+    <a href="">
+        <div>Nos formations</div>
+    </a>
+    <a href="">
+        <div>L'équipe</div>
+    </a>
+    {% if logged %}
+        <a href="/logout">
+            <div>Se déconnecter</div>
+        </a>
+        <!--<button onclick="app.user_logging()">Se déconnecter</button>
+        <form action="" method="POST" class="logout-button-form">
+            <input type="text" id="log-button" value="logged-out" style="display: none; visibility: hidden;">
+            <input type="submit" value="Se déconnecter">
+        </form>-->
+    {% else %}
+        <a href="/login">
+            <div>Connexion</div>
+        </a>
+    {% endif %}
+{% endblock %}
 
-        <header>
-            <h1>ABC Consulting</h1>
-            <h2>Save money, win clients</h2>
-        </header>
-
-        <footer>
-            <p>infos copyright</p>
-            <a href="">
-                <p>Conditions générales d'utilisation</p>
-            </a>
-            <div class="reseaux-sociaux">
-                X Facebook Linkedin Instagram
-            </div>
-        </footer>
-    </body>
-</html>
+{% block content %}
+{% endblock %}

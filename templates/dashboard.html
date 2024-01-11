@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+    <form action="" method="POST" class="password-change-form">
+        <h3>Modifier le mot de passe</h3>
+        <label for="new-pwd">Nouveau mot de passe</label>
+        <input type="password" id="new-pwd" name="new-pwd" required>
+        <label for="confirmed-pwd">Confirmation du mot de passe</label>
+        <input type="password" id="confirmed-pwd" name="confirmed-pwd" required>
+        <button type="submit">Valider</button>
+    </form>
+    <form action="" method="POST" class="password-change-form">
+        <h3>Modifier le slogan</h3>
+        <label for="new-tagline">Nouveau slogan</label>
+        <textarea name="new-tagline" cols="40" rows="4" required></textarea>
+        <button type="submit">Valider</button>
+    </form>
+{% endblock %}

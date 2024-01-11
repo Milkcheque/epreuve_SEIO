@@ -1,4 +1,5 @@
-import flask
+from flask import Flask
+from user import User
 
 class App():
     """
@@ -6,7 +7,8 @@ class App():
     """
 
     def __init__(self):
-        self.flask_app = flask.Flask(__name__)
-
+        self.flask_app = Flask(__name__)
         # Enlever débugueur quand site en ligne
         self.flask_app.config["DEBUG"] = True
+        
+        self.user = User()

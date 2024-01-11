@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>ABC Consulting</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <nav>
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/Logo_transparent.png') }}" alt="">
+            </a>
+            {% block nav %}{% endblock %}
+        </nav>
+
+        <header>
+            <h1>ABC Consulting</h1>
+            <h2>{{ tagline }}</h2>
+        </header>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>infos copyright</p>
+            <a href="">
+                <p>Conditions générales d'utilisation</p>
+            </a>
+            <div class="reseaux-sociaux">
+                X Facebook Linkedin Instagram
+            </div>
+        </footer>
+    </body>
+</html>
