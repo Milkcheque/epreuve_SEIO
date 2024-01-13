@@ -7,16 +7,63 @@
 {% block content %}
     <form action="" method="POST" class="password-change-form">
         <h3>Modifier le mot de passe</h3>
-        <label for="new-pwd">Nouveau mot de passe</label>
-        <input type="password" id="new-pwd" name="new-pwd" required>
-        <label for="confirmed-pwd">Confirmation du mot de passe</label>
-        <input type="password" id="confirmed-pwd" name="confirmed-pwd" required>
-        <button type="submit">Valider</button>
+        {% if not in_confirmation %}
+            <label for="new-pwd">Nouveau mot de passe</label>
+            <input type="password" id="new-pwd" name="new-pwd" required>
+            <label for="confirmed-pwd">Confirmation du mot de passe</label>
+            <input type="password" id="confirmed-pwd" name="confirmed-pwd" required>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            <button type="submit">Valider</button>
+            
+        {% else %}
+            <p>Êtes-vous sûr de vouloir modifier votre mot de passe ?</p>
+            <input type="text" name="is_confirmed" value="confirmed" style="visibility: hidden">
+            <button type="submit">Valider</button>
+            <a href="/dashboard">Annuler</a>
+        {% endif %}
+
+        <!-- <input type="button" onclick="showPopup()" value="Valider">
+        
+        <div id="myPopup" class="" >
+            <p class="popup-content" >Êtes-vous sûr de vouloir modifier votre mot de passe ?</p>
+            <input class="popup-content" type="submit" value="Confirmer">
+            <a href="/dashboard" class="popup-content">Annuler</a>
+        </div>
+          
+        <script>
+            function showPopup() {
+                document.getElementById("myPopup").classList.toggle("show");
+                //var popup = document.querySelector(".popup");
+                //popup.classList.toggle("show"); // Dans l'inspecteur transforme la classe "popup" en "popup show"
+            }
+        </script> -->
+            
+            <!-- {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <p>{{ messages[0] }}</p>
+                <a href="">Confirmer</a> -->
+                <!-- <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                        <a href="">Confirmer</a>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %} -->
+        <!-- <popup id="new-pwd-confirmation">
+            <p>Êtes-vous sûr de vouloir modifier votre mot de passe ?</p>
+            <a href="">Confirmer</a>
+        </popup> -->
     </form>
-    <form action="" method="POST" class="password-change-form">
+    <form action="" method="POST" class="tagline-change-form">
         <h3>Modifier le slogan</h3>
         <label for="new-tagline">Nouveau slogan</label>
-        <textarea name="new-tagline" cols="40" rows="4" required></textarea>
+        <textarea name="new-tagline" cols="40" rows="4" required placeholder="{{ tagline }}"></textarea>
         <button type="submit">Valider</button>
     </form>
 {% endblock %}
+
+  </body>
+  </html>

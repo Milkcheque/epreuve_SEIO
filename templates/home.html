@@ -4,28 +4,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
 {% endblock %}
 
-{% block nav %}
-    <a href="">
-        <div>Nos formations</div>
-    </a>
-    <a href="">
-        <div>L'équipe</div>
-    </a>
-    {% if logged %}
-        <a href="/logout">
-            <div>Se déconnecter</div>
-        </a>
-        <!--<button onclick="app.user_logging()">Se déconnecter</button>
-        <form action="" method="POST" class="logout-button-form">
-            <input type="text" id="log-button" value="logged-out" style="display: none; visibility: hidden;">
-            <input type="submit" value="Se déconnecter">
-        </form>-->
-    {% else %}
-        <a href="/login">
-            <div>Connexion</div>
-        </a>
-    {% endif %}
-{% endblock %}
-
 {% block content %}
+    <header>
+        <h1>ABC Consulting</h1>
+        <h2>{{ tagline }}</h2>
+    </header>
 {% endblock %}

@@ -12,13 +12,31 @@
             <a href="/">
                 <img src="{{ url_for('static', filename='images/Logo_transparent.png') }}" alt="">
             </a>
-            {% block nav %}{% endblock %}
+            <a href="">
+                <div>Services</div>
+            </a>
+            <a href="">
+                <div>Nos partenaires</div>
+            </a>
+            <a href="">
+                <div>Actualités</div>
+            </a>
+            <a href="">
+                <div>Contact</div>
+            </a>
+            {% if logged %}
+                <a href="/dashboard">
+                    <div>Portail administrateur</div>
+                </a>
+                <a href="/logout">
+                    <div>Se déconnecter</div>
+                </a>
+            {% else %}
+                <a href="/login">
+                    <div>Connexion</div>
+                </a>
+            {% endif %}
         </nav>
-
-        <header>
-            <h1>ABC Consulting</h1>
-            <h2>{{ tagline }}</h2>
-        </header>
 
         <main>
             {% block content %}

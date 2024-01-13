@@ -1,3 +1,6 @@
-from SQLite_query import *
+var = ""
 
-print(get_website_component("tagline"))
+if var:
+    print("ok")
+else:
+    print("not ok")

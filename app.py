@@ -10,5 +10,6 @@ class App():
         self.flask_app = Flask(__name__)
         # Enlever débugueur quand site en ligne
         self.flask_app.config["DEBUG"] = True
-        
+        self.flask_app.secret_key = 'secret_key'
+
         self.user = User()
