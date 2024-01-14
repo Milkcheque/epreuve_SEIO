@@ -4,13 +4,15 @@
     <head>
         <meta charset="UTF-8">
         <title>ABC Consulting</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
         {% block head %}{% endblock %}
     </head>
     <body>
+        <div class="navbar">
         <nav>
             <a href="/">
-                <img src="{{ url_for('static', filename='images/Logo_transparent.png') }}" alt="">
+                <img class="logo" src="{{ url_for('static', filename='images/Logo_transparent.png') }}" alt="">
             </a>
             <a href="">
                 <div>Services</div>
@@ -25,32 +27,54 @@
                 <div>Contact</div>
             </a>
             {% if logged %}
-                <a href="/dashboard">
-                    <div>Portail administrateur</div>
-                </a>
-                <a href="/logout">
-                    <div>Se déconnecter</div>
-                </a>
-            {% else %}
-                <a href="/login">
-                    <div>Connexion</div>
-                </a>
+            <a href="/dashboard">
+                <div>Portail administrateur</div>
+            </a>
             {% endif %}
         </nav>
+        {% if logged %}
+        <a href="/logout" id="logout">
+            <div>Se déconnecter</div>
+        </a>
+        {% else %}
+        <a href="/login" id="login">
+            <div>Connexion</div>
+        </a>
+        {% endif %}
+    </div>
 
         <main>
             {% block content %}
             {% endblock %}
         </main>
-
+        
         <footer>
-            <p>infos copyright</p>
-            <a href="">
-                <p>Conditions générales d'utilisation</p>
-            </a>
-            <div class="reseaux-sociaux">
-                X Facebook Linkedin Instagram
+            <div class="footer-component">
+                <h2>Contact</h2>
+                <p>+33 8 91 16 31 12</p>
+                <p>contact@abc-consulting.com</p>
+                <p>50 rue de l'argent, 49025 Angers Cedex 8</p>
             </div>
+            <span class="footer-component">
+                <div class="reseaux-sociaux">
+                    <a href="">
+                        <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter">
+                    </a>
+                    <a href="">
+                        <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook">
+                    </a>
+                    <a href="">
+                        <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="Linkedin">
+                    </a>
+                    <a href="">
+                        <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram">
+                    </a>
+                </div>
+                <a href="">
+                    <p>Conditions générales d'utilisation</p>
+                </a>
+                <p>© 2024 | Copyright | ABC Consulting, All rights reserved</p>
+            </span>
         </footer>
     </body>
 </html>

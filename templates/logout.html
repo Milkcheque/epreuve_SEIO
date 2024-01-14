@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/logout.css') }}">
 {% endblock %}
 
 {% block content %}
-    <h3>Vous vous êtes déconnecté avec succès</h3>
-    <a href="/">Retour à la page d'accueil</a>
+    <div id="logout-container">
+        <h3>Vous vous êtes déconnecté avec succès.</h3>
+        <a class="button" href="/">Retour à la page d'accueil</a>
+    </div>
 {% endblock %}

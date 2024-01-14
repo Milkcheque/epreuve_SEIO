@@ -1,0 +1,29 @@
+header{
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#right-span, #left-span{
+    height: 7px;
+    width: 100px;
+    background-color: var(--green);
+    position: absolute;
+}
+
+#left-span{
+    right: 50%;
+}
+
+#right-span{
+    left: 50%;
+}
+
+header h1{
+    margin-bottom: 30px;
+}
+
+#tagline{
+    margin-top: 60px;
+}

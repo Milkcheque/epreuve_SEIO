@@ -1,0 +1,109 @@
+
+/* Style de la barre de navigation */
+.navbar{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 2px var(--dark-purple);
+}
+
+.navbar nav{
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.navbar nav a , .navbar a {
+    color: var(--dark-purple);
+    text-decoration: none;
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.navbar nav a:hover, .navbar a:hover {
+    color: var(--green);
+}
+
+.navbar div {
+    padding: 5px 20px;
+}
+
+/* Style du footer */
+footer {
+    background-color: var(--dark-purple);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-component{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer img {
+    width: 30px;
+    margin: 5px;
+}
+
+footer a p {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+.reseaux-sociaux {
+    margin-bottom: 10px;
+}
+
+.reseaux-sociaux a {
+    display: inline-block;
+}
+
+/* Style pour les formulaires */
+form{
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    padding: 5%;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+form div input, textarea{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: solid;
+    border-radius: 5px;
+    border-color: var(--light);
+    width: 250px;
+}
+
+form div input:focus, textarea:focus{
+    border-color: var(--green);
+}
