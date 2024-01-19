@@ -1,9 +1,3 @@
-#########################################################
-#                  ARNAUD MORILLON                      #   
-#                                                       #
-#    Fichier avec toutes les requêtes SQLite utilisées  #
-#########################################################
-
 import sqlite3
 
 def get_db():

@@ -1,8 +1,10 @@
 header{
     padding: 10px;
+    padding-bottom: 50px;
     text-align: center;
     font-size: 30px;
     margin-bottom: 20px;
+    border-bottom: solid 2px var(--dark-purple);
 }
 
 #right-span, #left-span{
@@ -26,4 +28,20 @@ header h1{
 
 #tagline{
     margin-top: 60px;
+}
+
+.home-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 150px 50px;
+}
+
+.home-content img{
+    width: 40%;
+    border-radius: 5px;
+}
+
+.home-content h3{
+    padding: 30px;
 }
